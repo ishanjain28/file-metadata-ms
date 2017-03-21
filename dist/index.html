@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>File Metadata Microservice</title>
+</head>
+<style>
+    * {
+        /*outline: 1px solid: ; red;*/
+        user-select: none;
+    }
+    
+    html,
+    body {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #edddd4;
+    }
+    
+    header {
+        position: absolute;
+        top: 0;
+        background: red;
+        color: white;
+        padding: 25px;
+        min-width: 90%;
+        text-align: center;
+        font-family: 'serif';
+        font-size: 1.5em;
+    }
+    
+    form {
+        padding: 15px;
+        background: grey;
+        color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    form label {
+        padding: 15px;
+    }
+    
+    form label span {
+        font-size: 1.2em;
+    }
+    
+    form label input {
+        font-size: 1.2em;
+    }
+    
+    form input {
+        font-size: 1.2em;
+        cursor: pointer;
+    }
+    
+    footer {
+        bottom: 0;
+        position: absolute;
+        padding: 10px;
+        text-align: center;
+        min-width: 80%;
+        background: palevioletred;
+        margin: 0;
+    }
+    
+    a {
+        text-decoration: none;
+        transition: 0.2s;
+        color: black;
+        padding: 10px;
+        margin: 0;
+        height: 100%;
+        letter-spacing: 2px;
+    }
+    
+    a:hover {
+        text-decoration: none;
+        color: cornsilk;
+        background: seagreen;
+    }
+    
+    a:active {
+        text-decoration: none;
+        color: black;
+    }
+    
+    a:visited {
+        background: grey;
+        color: white;
+    }
+</style>
+
+<body>
+    <header>File Metadata Microservice</header>
+    <main id="main">
+        <form method="post" action="/upload" class="input-form" enctype="multipart/form-data">
+            <label>
+              <span>Upload File</span>
+              <input type="file" name="uploadedFile" class="input-file" />
+            </label>
+            <input type="submit" id="submit" />
+        </form>
+    </main>
+    <footer class="footer">
+        <span>
+          <a href="https://github.com/ishanjain28/fcc-file-metadata-ms">
+            GITHUB
+          </a>
+        </span>
+    </footer>
+</body>
+
+</html>

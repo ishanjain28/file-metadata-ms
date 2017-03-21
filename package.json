@@ -1,0 +1,29 @@
+{
+  "name": "file-metadata-ms",
+  "version": "1.0.0",
+  "description": "File Metadata Microservice ",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ishanjain28/file-metadata-ms.git"
+  },
+  "keywords": [
+    "files",
+    "node",
+    "freecodecamp",
+    "microservices"
+  ],
+  "author": "Ishan Jain <github.com/ishanjain28>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ishanjain28/file-metadata-ms/issues"
+  },
+  "homepage": "https://github.com/ishanjain28/file-metadata-ms#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "multer": "^1.3.0"
+  }
+}
