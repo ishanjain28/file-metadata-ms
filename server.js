@@ -3,14 +3,24 @@ const express = require('express'),
     multer = require('multer'),
     fs = require('fs'),
     app = express(),
-    upload = multer({ dest: 'uploads/' }),
     PORT = process.env.PORT || 5000;
+
+// Delete Uploads Folder on start
+fs.existsSync(path.join('./uploads'), (exists) => {
+    if (exists) {
+        fs.rmdir(path.join('./uploads'), (err) => {
+            if (err) throw err;
+            console.log('Uploads Folder Erased!')
+        });
+    }
+});
+
+const upload = multer({ dest: 'uploads/' });
 
 app.disable('x-powered-by');
 
 app.post('/upload', upload.single('uploadedFile'), (req, res, next) => {
     if (req.file) {
-
         res.send({ "size": req.file.size });
     } else {
         res.send({ "error": "No File Selected" })
@@ -26,15 +36,3 @@ app.listen(PORT, (err) => {
 
     console.log(`Server started on PORT ${PORT}`);
 });
-
-// setInterval(function() {
-//     fs.exists(path.join('./uploads'), (exists) => {
-//         if (exists) {
-//             fs.rmdir(path.join('./uploads'), (err) => {
-//                 if (err) throw err;
-//                 console.log('uploads folder erased successfully!');
-//             });
-//         }
-//     })
-
-// }, 60 * 60)
